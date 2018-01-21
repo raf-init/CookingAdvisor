@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:background="#000000"
+    android:paddingBottom="10dp">
+
+    <android.support.v7.widget.SearchView
+        android:layout_width="fill_parent"
+        android:queryBackground="@color/white"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView1"
+        android:focusable="false"
+        />
+
+    <android.support.v7.widget.SearchView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchView1"
+        android:id="@+id/searchView2"
+        android:focusable="false"
+        />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:background="#000000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchView2"
+        android:descendantFocusability="blocksDescendants"
+        android:scrollbars="vertical"/>
+
+</RelativeLayout>

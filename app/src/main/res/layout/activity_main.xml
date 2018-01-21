@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/activity_main2"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+
+android:weightSum="2"
+android:background="@drawable/main_linear_layout_gradient"
+tools:context="ralph.cookingadvisor.MainActivity">
+
+<Button
+    android:id="@+id/button1"
+    android:text="Check the feed"
+    android:textSize="16dp"
+    android:textAllCaps="false"
+    android:textColor="#ffffff"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+
+    android:layout_weight="1.0"
+
+    />
+
+
+
+    <TextView
+        android:layout_width="16dp"
+        android:text="X"
+        android:gravity="center"
+        android:textColor="#FF2AA3EF"
+        android:layout_height="16dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:text="Insert the ingredients"
+        android:textAllCaps="false"
+        android:textSize="16dp"
+
+
+        android:textColor="#ffffff"
+
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+
+
+        />
+
+</LinearLayout>

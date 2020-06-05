@@ -1,3 +1,3 @@
 # CookingAdvisor
-ONOMA: DIMTSIOS RAFAIL CHRISTOS
-AM: 64/15
+An android app suggesting recipes from an API and a local SQL database
+

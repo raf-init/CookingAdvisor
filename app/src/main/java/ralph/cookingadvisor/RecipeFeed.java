@@ -18,13 +18,11 @@ import ralph.cookingadvisor.Common.HTTPDataHandler;
 import ralph.cookingadvisor.Model.RSSObject;
 
 public class RecipeFeed extends AppCompatActivity {
-
-
     Toolbar toolbar;
     RecyclerView recyclerView;
     RSSObject rssObject;
     Button bt;
-
+    
     //RSS link
     private final String RSS_link = "http://www.health.com/recipes/feed";
     private final String RSS_to_Json_API = " https://api.rss2json.com/v1/api.json?rss_url=";
@@ -33,7 +31,6 @@ public class RecipeFeed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_feed);
-
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Recipes");

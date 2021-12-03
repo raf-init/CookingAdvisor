@@ -5,10 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-/**
- * Created by rafaelchris on 17/11/17.
- */
-
 public class Splash extends Activity{
     private final int SPLASH_DISPLAY_LENGTH = 3000;
     @Override

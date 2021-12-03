@@ -1,4 +1,4 @@
-package ralph.cookingadvisor;
+package rcd.cookingadvisor;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -10,52 +10,40 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-
 import com.google.gson.Gson;
-
-import ralph.cookingadvisor.Adapters.FeedAdapter;
-import ralph.cookingadvisor.Common.HTTPDataHandler;
-import ralph.cookingadvisor.Model.RSSObject;
+import rcd.cookingadvisor.Adapters.FeedAdapter;
+import rcd.cookingadvisor.Common.HTTPDataHandler;
+import rcd.cookingadvisor.Model.RSSObject;
 
 public class RecipeFeed extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView recyclerView;
     RSSObject rssObject;
     Button bt;
-    
     //RSS link
     private final String RSS_link = "http://www.health.com/recipes/feed";
     private final String RSS_to_Json_API = " https://api.rss2json.com/v1/api.json?rss_url=";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_feed);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Recipes");
         setSupportActionBar(toolbar);
-
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getBaseContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-
         loadRSS();
-
     }
-
 
     private void loadRSS() {
         AsyncTask<String, String, String> loadRSSAsync = new AsyncTask<String, String, String>() {
-
             ProgressDialog mDialog = new ProgressDialog(RecipeFeed.this);
-
             @Override
             protected void onPreExecute() {
                 mDialog.setMessage("Please wait...");
                 mDialog.show();
             }
-
             @Override
             protected String doInBackground(String... params) {
                 String result;
@@ -63,7 +51,6 @@ public class RecipeFeed extends AppCompatActivity {
                 result = http.GetHTTPData(params[0]);
                 return result;
             }
-
             @Override
             protected void onPostExecute(String s) {
                 mDialog.dismiss();
@@ -81,7 +68,6 @@ public class RecipeFeed extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
-
         return true;
     }
 
@@ -89,7 +75,6 @@ public class RecipeFeed extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.menu_refresh)
             loadRSS();
-
         return true;
     }
 }

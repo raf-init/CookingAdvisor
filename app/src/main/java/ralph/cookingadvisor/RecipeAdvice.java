@@ -1,4 +1,4 @@
-package ralph.cookingadvisor;
+package rcd.cookingadvisor;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -13,13 +13,9 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import ralph.cookingadvisor.Adapters.DatabaseAdapter;
-import ralph.cookingadvisor.Database.DatabaseHelper;
-import ralph.cookingadvisor.Model.RecipeObjectModel;
-
-/**
- * Created by rafaelchris on 8/11/17.
- */
+import rcd.cookingadvisor.Adapters.DatabaseAdapter;
+import rcd.cookingadvisor.Database.DatabaseHelper;
+import rcd.cookingadvisor.Model.RecipeObjectModel;
 
 public class RecipeAdvice extends AppCompatActivity {
 
@@ -27,6 +23,7 @@ public class RecipeAdvice extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private static RecyclerView recyclerView;
     public static ArrayList<RecipeObjectModel> data;
+    
     DatabaseHelper db ;
     
     ArrayList<String> rcp_namelist;
@@ -53,7 +50,6 @@ public class RecipeAdvice extends AppCompatActivity {
     int checker1=0;
     int checker2=0;
     
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,13 +69,11 @@ public class RecipeAdvice extends AppCompatActivity {
         data = new ArrayList<RecipeObjectModel>();
         fetchData();
 
-
         combinelist = new ArrayList<RecipeObjectModel>();
         
         final ArrayList<RecipeObjectModel> filteredList1 = new ArrayList<RecipeObjectModel>();
         final ArrayList<RecipeObjectModel> filteredList2 = new ArrayList<RecipeObjectModel>();
         
-
         searchView1.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             
             @Override
@@ -87,16 +81,11 @@ public class RecipeAdvice extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
-
                 filteredList1.clear();
                 newText = newText.toLowerCase();
                 recyclerView.clearAnimation();
-
-
-
+                
                 for(String key : c5list.keySet()) {
-
                     if(c5list.get(key).contains(newText)) 
                     {
                         filteredList1.add(new RecipeObjectModel(key, c5list.get(key).get(0)));
@@ -111,9 +100,7 @@ public class RecipeAdvice extends AppCompatActivity {
                         recyclerView.setAdapter(adapter);
                         flag1=1;
                         checker1=1;
-
                     }
-                    
                 }
                 
                 if((flag1==0 && flag2==0) || (flag1==0 && searchView2.getContext().toString().contains("")) )
@@ -156,7 +143,6 @@ public class RecipeAdvice extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-
                 recyclerView.clearAnimation();
                 filteredList2.clear();
                 newText = newText.toLowerCase();

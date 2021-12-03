@@ -1,4 +1,4 @@
-package ralph.cookingadvisor;
+package rcd.cookingadvisor;
 
 import android.app.Activity;
 import android.content.Intent;
